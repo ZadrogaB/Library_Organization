@@ -2,7 +2,9 @@ package com.library.mapper;
 
 import com.library.domain.Rent;
 import com.library.domain.dto.RentDto;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RentMapper {
 
     public Rent mapToRent(final RentDto rentDto){

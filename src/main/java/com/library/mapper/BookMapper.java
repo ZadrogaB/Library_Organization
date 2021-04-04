@@ -2,9 +2,12 @@ package com.library.mapper;
 
 import com.library.domain.Book;
 import com.library.domain.dto.BookDto;
+import org.springframework.stereotype.Service;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Service
 public class BookMapper {
     public BookDto mapToBookDto(final Book book){
         return new BookDto(book.getId(),

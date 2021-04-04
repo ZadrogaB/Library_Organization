@@ -19,7 +19,7 @@ public class Titles {
     @Column(name = "Id")
     private Long id;
 
-    @Column(name = "Title")
+    @Column(name = "Title", unique = true)
     private String title;
 
     @Column(name = "Author")

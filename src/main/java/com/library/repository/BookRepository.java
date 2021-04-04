@@ -8,5 +8,8 @@ public interface BookRepository extends CrudRepository<Book, Long> {
     @Override
     Book save(final Book book);
 
+    @Override
+    Optional<Book> findById(Long id);
+
     List<Book> findAllByTitle(final String title);
 }

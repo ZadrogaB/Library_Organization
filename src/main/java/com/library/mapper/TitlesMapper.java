@@ -2,8 +2,11 @@ package com.library.mapper;
 
 import com.library.domain.Titles;
 import com.library.domain.dto.TitlesDto;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TitlesMapper {
+
     public TitlesDto mapToTitlesDto(final Titles titles){
         return new TitlesDto(titles.getId(),
                 titles.getTitle(),
