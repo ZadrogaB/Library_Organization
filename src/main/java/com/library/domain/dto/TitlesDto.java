@@ -13,6 +13,6 @@ public class TitlesDto {
     private Long id;
     private String title;
     private String author;
-    private Year yearOfPublish;
+    private Long yearOfPublish;
     private List<Book> listOfBooks;
 }

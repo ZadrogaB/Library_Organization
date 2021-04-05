@@ -1,5 +1,6 @@
 package com.library.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,15 +20,16 @@ public class Titles {
     @Column(name = "Id")
     private Long id;
 
-    @Column(name = "Title", unique = true)
+    @Column(name = "Title", unique = true, nullable = false)
     private String title;
 
-    @Column(name = "Author")
+    @Column(name = "Author", nullable = false)
     private String author;
 
-    @Column(name = "YearOfPublish")
-    private Year yearOfPublish;
+    @Column(name = "YearOfPublish", nullable = false)
+    private Long yearOfPublish;
 
+    @JsonBackReference
     @OneToMany (
             targetEntity = Book.class,
             cascade =  CascadeType.ALL,

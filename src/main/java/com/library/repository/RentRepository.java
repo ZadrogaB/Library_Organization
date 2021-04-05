@@ -7,8 +7,8 @@ import java.util.Optional;
 
 public interface RentRepository extends CrudRepository<Rent, Long> {
     @Override
-    Rent save(Rent rent);
+    Rent save(final Rent rent);
 
     @Override
-    Optional<Rent> findById(Long id);
+    Optional<Rent> findById(final Long id);
 }

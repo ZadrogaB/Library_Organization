@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class ReaderService {
-    private ReaderRepository repository;
+    private final ReaderRepository repository;
 
-    public Reader saveReader(Reader reader){
+    public Reader saveReader(final Reader reader){
         return repository.save(reader);
     }
 }

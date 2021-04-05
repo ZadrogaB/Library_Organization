@@ -3,6 +3,7 @@ package com.library.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 @Entity(name = "Rents")
 public class Rent {
 
@@ -21,13 +23,13 @@ public class Rent {
     @Column(name = "Id")
     private Long id;
 
-    @Column(name = "BookId")
+    @Column(name = "BookId", nullable = false)
     private Long bookId;
 
-    @Column(name = "ReaderId")
+    @Column(name = "ReaderId", nullable = false)
     private Long readerId;
 
-    @Column(name = "DateOfRent")
+    @Column(name = "DateOfRent", nullable = false)
     private Date rentDate;
 
     @Column(name = "DateOfHandBack")

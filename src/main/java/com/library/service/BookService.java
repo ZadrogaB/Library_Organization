@@ -11,17 +11,18 @@ import java.util.*;
 @Service
 @RequiredArgsConstructor
 public class BookService {
-    private BookRepository repository;
 
-    public Book saveBook(Book book){
+    private final BookRepository repository;
+
+    public Book saveBook(final Book book){
         return repository.save(book);
     }
 
-    public Optional<Book> findById(Long id){
+    public Optional<Book> findById(final Long id){
         return repository.findById(id);
     }
 
-    public List<Book> findByTitle(String title){
-        return repository.findAllByTitle(title);
+    public List<Book> findAllById(final Long id){
+        return repository.findAllById(id);
     }
 }
