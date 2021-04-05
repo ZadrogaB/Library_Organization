@@ -11,5 +11,6 @@ public interface BookRepository extends CrudRepository<Book, Long> {
     @Override
     Optional<Book> findById(final Long id);
 
-    List<Book> findAllById(final Long id);
+
+    List<Book> findAllByTitleId(final Long id);
 }

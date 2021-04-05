@@ -6,8 +6,6 @@ import com.library.repository.RentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 @RequiredArgsConstructor
 public class RentService {
@@ -17,7 +15,7 @@ public class RentService {
         return  repository.save(rent);
     }
 
-    public Rent findBookById (final Long rentId) throws RentNotExistException {
+    public Rent findRentById(final Long rentId) throws RentNotExistException {
         return repository.findById(rentId).orElseThrow(RentNotExistException::new);
     }
 }

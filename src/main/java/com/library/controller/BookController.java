@@ -9,7 +9,6 @@ import com.library.mapper.BookMapper;
 import com.library.service.BookService;
 import com.library.service.TitlesService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
@@ -38,12 +37,12 @@ public class BookController {
     }
 
     @GetMapping(value = "numberOfBooks")
-    public Integer numberOfBooks(@RequestParam String title){
+    public Long numberOfBooks(@RequestParam String title){
         Titles titlesForId = titleService.findByTitle(title);
-        System.out.println(titlesForId);
-        List<Book> bookList = service.findAllById(titlesForId.getId());
-        System.out.println(bookList);
-        System.out.println(bookList.size());
-        return bookList.size();
+        List<Book> bookList = service.findAllByTitleId(titlesForId.getId());
+
+        return bookList.stream()
+                .filter(n->n.getCondition().equals("Usable"))
+                .count();
     }
 }

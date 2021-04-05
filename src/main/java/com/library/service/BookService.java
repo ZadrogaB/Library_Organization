@@ -22,7 +22,7 @@ public class BookService {
         return repository.findById(id);
     }
 
-    public List<Book> findAllById(final Long id){
-        return repository.findAllById(id);
+    public List<Book> findAllByTitleId(final Long id){
+        return repository.findAllByTitleId(id);
     }
 }
